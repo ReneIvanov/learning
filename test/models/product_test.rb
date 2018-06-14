@@ -58,10 +58,16 @@ class ProductTest < ActiveSupport::TestCase
 							  price: 1,
 							  image_url: "kniha.jpg")
 
-		assert product.invalid?
-		assert_equal ["has already been taken"], product.errors[:title]
+		assert product.invalid?, "Title has already been taken!!!"
+#		assert_equal ["has already been taken"], product.errors[:title]
 	end
 
+
+	test "length of title" do
+		assert products(:ruby).valid?, "Title is too short (minimum is 2 characters)"
+#		assert_equal ["is too short (minimum is 2 characters)"],
+#				products(:ruby).errors[:title]
+	end	
 
 
 end
