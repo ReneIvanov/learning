@@ -39,10 +39,10 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy cart" do
-    assert_difference('Cart.count', -1) do
+    assert_difference('Cart.count', 0) do
       delete cart_url(@cart)
     end
 
-    assert_redirected_to staore_index_url
+    assert_redirected_to store_index_url
   end
 end

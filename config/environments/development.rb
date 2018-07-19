@@ -58,4 +58,24 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.action_cable.disable_request_forgery_protection = true
+  # Channels can have security implications, so by default Rails only allows
+  #access from the localhost when running in development mode. If you’re doing
+  #development with multiple machines, you must disable this check. Do this
+  #by adding the following line t
+
+  Depot::Application.configure do
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              "smtp.gmail.com",
+      port:                 587,
+      domain:               "domain.of.sender.net",
+      authentication:       "plain",
+      user_name:            "rubytester27@gmail.com",
+      password:             "rubyonrails27",
+      enable_starttls_auto: true
+    }
+  end
+
 end
