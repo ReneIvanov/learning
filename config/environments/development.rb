@@ -65,7 +65,7 @@ Rails.application.configure do
   #development with multiple machines, you must disable this check. Do this
   #by adding the following line t
 
-  Depot::Application.configure do
+  Learning::Application.configure do
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
       address:              "smtp.gmail.com",
